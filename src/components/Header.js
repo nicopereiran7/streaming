@@ -60,9 +60,8 @@ const Header = () => {
 
   return (
     <Nav>
-      <Link to={userName ? "/home" : "/"}>Logo</Link>
       {!userName ? (
-        <Login onClick={handleAuth}>Login</Login>
+        <Login onClick={handleAuth}>Iniciar Sesion</Login>
       ) : (
         <>
           <NavMenu>
@@ -101,9 +100,9 @@ const Nav = styled.div`
   left: 0;
   right: 0;
   height: 70px;
-  background-color: #000;
+  background-color: transparent;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 0 36px;
   letter-spacing: 6px;
@@ -186,9 +185,10 @@ const Login = styled.a`
   padding: 8px 16px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  border: 1px solid #f9f9f9;
   border-radius: 4px;
   transition: 0.5s ease all;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
 
   &:hover {
     cursor: pointer;

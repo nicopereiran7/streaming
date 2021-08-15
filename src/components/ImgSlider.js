@@ -47,8 +47,8 @@ const Carousel = styled(Slider)`
 
   & > button {
     opacity: 0;
-    height: 100%;
     width: 5vw;
+    height: 100%;
     z-index: 1;
     transition: opacity 0.3s ease 0s;
 
@@ -67,10 +67,6 @@ const Carousel = styled(Slider)`
 
   li.slick-active button:before {
     color: white;
-  }
-
-  .slick-list {
-    overflow: initial;
   }
 
   .slick-prev {
