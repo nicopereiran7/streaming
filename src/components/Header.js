@@ -10,16 +10,24 @@ import {
   setUserLoginDetails,
   setSignOutState,
 } from "../features/user/userSlice";
+import { useState } from "react";
 
 const Header = () => {
+  const [scrollTop, setScrollTop] = useState(0);
   const dispatch = useDispatch();
   const history = useHistory();
   const userName = useSelector(selectUserName);
   const userPhoto = useSelector(selectUserPhoto);
 
   useEffect(() => {
+    function mostrarScroll() {
+      setScrollTop(document.documentElement.scrollTop);
+    }
+    window.addEventListener("scroll", mostrarScroll);
+  }, []);
+
+  useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
-      console.log(user);
       if (user) {
         setUser(user);
         history.push("/home");
@@ -59,7 +67,7 @@ const Header = () => {
   };
 
   return (
-    <Nav>
+    <Nav scrollTop={scrollTop}>
       {!userName ? (
         <Login onClick={handleAuth}>Iniciar Sesion</Login>
       ) : (
@@ -95,12 +103,15 @@ const Header = () => {
 };
 
 const Nav = styled.div`
+  transition: all 0.2s ease 0s;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 70px;
-  background-color: transparent;
+  transition: height 0.3s ease-in-out;
+  background-color: ${({ scrollTop }) =>
+    scrollTop < 800 ? "transparent" : "#090b13"};
   display: flex;
   justify-content: flex-end;
   align-items: center;

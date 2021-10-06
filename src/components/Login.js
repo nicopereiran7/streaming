@@ -32,6 +32,9 @@ const original = [
   {
     img: "https://cannonball-cdn.bamgrid.com/assets/originals/RogueTrip_ES.jpg",
   },
+  {
+    img: "https://www.latercera.com/resizer/0EJshULjEedxo5aYJM2LBnASsf8=/900x600/filters:focal(440x148:450x138)/cloudfront-us-east-1.images.arcpublishing.com/copesa/PNHJC7LIQBGHXEQ4SBQKTH3ETY.jpg",
+  },
 ];
 
 const movies = [
@@ -43,6 +46,24 @@ const movies = [
   },
   {
     img: "https://cannonball-cdn.bamgrid.com/assets/originals/Star_Wars_TROS_ES.jpg",
+  },
+  {
+    img: "https://cannonball-cdn.bamgrid.com/assets/originals/Onward_es-419.jpg",
+  },
+  {
+    img: "https://cannonball-cdn.bamgrid.com/assets/originals/Toy_Story_4_Grid_Item-1.jpg",
+  },
+  {
+    img: "https://cannonball-cdn.bamgrid.com/assets/originals/Free_Solo_UKI_v2.png",
+  },
+  {
+    img: "https://assets.megamediaradios.fm/sites/3/2021/07/black3-974x547.jpeg",
+  },
+  {
+    img: "https://cannonball-cdn.bamgrid.com/assets/originals/XMenWolverine_ES.jpg",
+  },
+  {
+    img: "https://cannonball-cdn.bamgrid.com/assets/originals/Disney_MLP_GridItem_Frozen2_AUNZ.jpg",
   },
 ];
 
@@ -209,6 +230,10 @@ const CTA = styled.div`
 const LogoImg = styled.img`
   width: 10%;
   object-fit: cover;
+
+  @media (max-width: 900px) {
+    width: 30%;
+  }
 `;
 
 const GroupBtn = styled.div`
@@ -242,6 +267,7 @@ const ButtonItem = styled.div`
 
   @media (max-width: 900px) {
     margin-right: 0;
+    margin-bottom: 20px;
   }
 `;
 
@@ -313,6 +339,27 @@ const ContainerSecondary = styled.div`
     flex: 0.5;
     margin-left: 40px;
     align-items: flex-start;
+  }
+
+  @media (max-width: 900px) {
+    display: inline;
+    h1,
+    p {
+      text-align: center;
+    }
+
+    .left {
+      flex: 1;
+    }
+
+    .right {
+      flex: 1;
+      margin-left: 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `;
 
